@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINTAGE IRON & THREAD | 經典美式復古服裝</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        amber: {
+                            50: '#fffbe1',
+                            100: '#fff3b8',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        vintage: {
+                            bg: '#F5EFE6',
+                            card: '#E8DFCA',
+                            dark: '#1A1817',
+                            red: '#8B261D',
+                            mustard: '#D99B26',
+                            denim: '#2C3E50',
+                            border: '#3A332C'
+                        }
+                    },
+                    fontFamily: {
+                        retro: ['"Changa One"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Noto Sans TC"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* 復古紋理與特殊效果 */
+        body {
+            background-color: #F5EFE6;
+            color: #1A1817;
+            background-image: radial-gradient(#3A332C 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+        .retro-border {
+            border: 3px solid #1A1817;
+            box-shadow: 4px 4px 0px #1A1817;
+        }
+        .retro-border-sm {
+            border: 2px solid #1A1817;
+            box-shadow: 2px 2px 0px #1A1817;
+        }
+        .retro-btn {
+            transition: all 0.15s ease;
+        }
+        .retro-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #1A1817;
+        }
+        .retro-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0px 0px 0px #1A1817;
+        }
+        .vintage-stamp {
+            transform: rotate(-5deg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-vintage-mustard selection:text-vintage-dark">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-vintage-red text-amber-50 text-xs sm:text-sm font-bold py-2 px-4 text-center tracking-wider border-b-2 border-vintage-dark">
+        ⚡ 復古狂熱季：全館滿 $3,000 即享免運 | 訂購即贈限量經典復古刺繡徽章 ⚡
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-vintage-bg/95 backdrop-blur border-b-4 border-vintage-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-vintage-red text-amber-50 font-retro text-2xl flex items-center justify-center rounded-none border-2 border-vintage-dark shadow-[2px_2px_0px_#1A1817]">
+                        V
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-retro text-xl sm:text-2xl tracking-wider text-vintage-dark leading-none">VINTAGE IRON</span>
+                        <span class="text-[10px] font-bold tracking-widest text-vintage-red uppercase">& THREAD CO. EST. 1978</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-8 text-base font-bold">
+                    <a href="#features" class="hover:text-vintage-red transition-colors">工藝特色</a>
+                    <a href="#styles" class="hover:text-vintage-red transition-colors">穿搭情境</a>
+                    <a href="#products" class="hover:text-vintage-red transition-colors">經典系列</a>
+                    <a href="#reviews" class="hover:text-vintage-red transition-colors">玩家好評</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden sm:flex items-center space-x-4">
+                    <button class="p-2 border-2 border-vintage-dark bg-amber-50 hover:bg-vintage-mustard transition-colors shadow-[2px_2px_0px_#1A1817]">
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <a href="#products" class="retro-btn bg-vintage-mustard text-vintage-dark font-bold px-5 py-2 border-2 border-vintage-dark shadow-[4px_4px_0px_#1A1817] flex items-center gap-2">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                        <span>立即選購</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 border-2 border-vintage-dark bg-amber-50">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t-2 border-vintage-dark bg-vintage-card px-4 pt-2 pb-6 space-y-3 font-bold">
+            <a href="#features" class="block py-2 border-b border-vintage-dark/20">工藝特色</a>
+            <a href="#styles" class="block py-2 border-b border-vintage-dark/20">穿搭情境</a>
+            <a href="#products" class="block py-2 border-b border-vintage-dark/20">經典系列</a>
+            <a href="#reviews" class="block py-2 border-b border-vintage-dark/20">玩家好評</a>
+            <a href="#products" class="block w-full text-center bg-vintage-mustard text-vintage-dark py-3 border-2 border-vintage-dark shadow-[3px_3px_0px_#1A1817] mt-4">
+                立即選購商品
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 md:py-24 overflow-hidden border-b-4 border-vintage-dark bg-vintage-card/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Left Column: Text & CTA -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-vintage-mustard/30 border-2 border-vintage-dark px-3 py-1 rounded-full text-xs sm:text-sm font-bold text-vintage-dark">
+                        <i data-lucide="flame" class="w-4 h-4 text-vintage-red"></i>
+                        <span>重現美式黃金年代的靈魂織品</span>
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-vintage-dark leading-tight">
+                        重塑經典。<br>
+                        穿上<span class="bg-vintage-mustard px-2 border-b-4 border-vintage-dark inline-block transform -rotate-1">永不褪色</span>的叛逆靈魂。
+                    </h1>
+
+                    <p class="text-base sm:text-lg md:text-xl font-medium text-vintage-dark/80 max-w-2xl leading-relaxed">
+                        我們使用 1950 年代老式 shuttle loom 織布機，重現老美式磅數與硬挺剪裁。不隨波逐流，每一道車縫線都是對經典美學的極致致敬。
+                    </p>
+
+                    <!-- Highlights Badge -->
+                    <div class="grid grid-cols-3 gap-3 py-2 max-w-lg">
+                        <div class="bg-amber-50 p-3 border-2 border-vintage-dark text-center shadow-[2px_2px_0px_#1A1817]">
+                            <p class="font-retro text-xl text-vintage-red">14.5 oz</p>
+                            <p class="text-xs font-bold">重磅赤耳丹寧</p>
+                        </div>
+                        <div class="bg-amber-50 p-3 border-2 border-vintage-dark text-center shadow-[2px_2px_0px_#1A1817]">
+                            <p class="font-retro text-xl text-vintage-red">100%</p>
+                            <p class="text-xs font-bold">純棉老紡車織造</p>
+                        </div>
+                        <div class="bg-amber-50 p-3 border-2 border-vintage-dark text-center shadow-[2px_2px_0px_#1A1817]">
+                            <p class="font-retro text-xl text-vintage-red">HAND</p>
+                            <p class="text-xs font-bold">手工植物染色</p>
+                        </div>
+                    </div>
+
+                    <!-- Hero CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#products" class="retro-btn bg-vintage-red text-amber-50 font-bold text-lg px-8 py-4 border-3 border-vintage-dark text-center shadow-[5px_5px_0px_#1A1817] flex items-center justify-center gap-3">
+                            <span>探索經典服裝系列</span>
+                            <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#features" class="retro-btn bg-amber-50 text-vintage-dark font-bold text-lg px-8 py-4 border-3 border-vintage-dark text-center shadow-[5px_5px_0px_#1A1817] flex items-center justify-center gap-2">
+                            <i data-lucide="compass" class="w-5 h-5"></i>
+                            <span>了解復古工藝</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Right Column: Image collage -->
+                <div class="lg:col-span-5 relative">
+                    <!-- Main Hero Image Frame -->
+                    <div class="relative bg-amber-50 p-4 border-4 border-vintage-dark shadow-[8px_8px_0px_#1A1817]">
+                        <img src="https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800" 
+                             alt="美式復古皮衣工裝穿搭" 
+                             class="w-full h-[420px] object-cover border-2 border-vintage-dark filter contrast-105 grayscale-[15%]"
+                             onerror="this.src='https://placehold.co/800x600/2C3E50/FFF?text=Vintage+Outfit'">
+                        
+                        <!-- Floating Badge/Stamp -->
+                        <div class="absolute -top-6 -right-6 bg-vintage-mustard border-3 border-vintage-dark p-3 rounded-full vintage-stamp shadow-[4px_4px_0px_#1A1817] text-center">
+                            <p class="font-retro text-sm uppercase text-vintage-dark leading-tight">ORIGINAL<br><span class="text-lg">QUALITY</span></p>
+                        </div>
+
+                        <!-- Image Subtitle -->
+                        <div class="mt-3 bg-vintage-bg p-2 border-2 border-vintage-dark text-center font-bold text-xs">
+                            📷 1970s Classic Biker & Workwear Reissue Edition
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Craftsmanship Section -->
+    <section id="features" class="py-20 border-b-4 border-vintage-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-retro text-vintage-red text-lg uppercase tracking-widest mb-2">WHY CHOOSE OUR APPAREL</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-black text-vintage-dark">拒絕快時尚，堅持四項美式老工藝</p>
+                <div class="w-24 h-1 bg-vintage-dark mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Feature 1 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[6px_6px_0px_#1A1817] flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 bg-vintage-mustard border-2 border-vintage-dark flex items-center justify-center mb-6 shadow-[3px_3px_0px_#1A1817]">
+                            <i data-lucide="layers" class="w-8 h-8 text-vintage-dark"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-black mb-3">14-18oz 重磅面料</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed">
+                            採用極致重磅棉麻與原色丹寧，穿著時擁有極佳的挺拔廓形，防風耐磨，經久耐穿。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t-2 border-dashed border-vintage-dark/30 font-bold text-xs text-vintage-red flex items-center gap-1">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> 永不縮水變形
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[6px_6px_0px_#1A1817] flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 bg-vintage-red text-amber-50 border-2 border-vintage-dark flex items-center justify-center mb-6 shadow-[3px_3px_0px_#1A1817]">
+                            <i data-lucide="scissors" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-black mb-3">老式三針五線車縫</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed">
+                            傳承 60 年代老式古董縫線機，結構極為緊實，大幅減少摩擦破損風險，鎖邊精緻度滿分。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t-2 border-dashed border-vintage-dark/30 font-bold text-xs text-vintage-red flex items-center gap-1">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> 雙倍縫線強度
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[6px_6px_0px_#1A1817] flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 bg-vintage-denim text-amber-50 border-2 border-vintage-dark flex items-center justify-center mb-6 shadow-[3px_3px_0px_#1A1817]">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-black mb-3">獨立色落與天然染</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed">
+                            使用天然藍染與植物色素，隨著個人穿着習慣與時間流逝，養出專屬於你的專屬色落痕跡。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t-2 border-dashed border-vintage-dark/30 font-bold text-xs text-vintage-red flex items-center gap-1">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> 獨一無二歲月痕跡
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[6px_6px_0px_#1A1817] flex flex-col justify-between hover:-translate-y-1 transition-transform">
+                    <div>
+                        <div class="w-14 h-14 bg-vintage-dark text-vintage-mustard border-2 border-vintage-dark flex items-center justify-center mb-6 shadow-[3px_3px_0px_#1A1817]">
+                            <i data-lucide="shield-check" class="w-8 h-8"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-black mb-3">純黃銅與老式鉚釘</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed">
+                            所有金屬扣具、拉鍊均採用訂製實心黃銅與古銅鉚釘，防鏽抗氧化，散發強烈金屬質感。
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t-2 border-dashed border-vintage-dark/30 font-bold text-xs text-vintage-red flex items-center gap-1">
+                        <i data-lucide="check-circle" class="w-4 h-4"></i> 實心黃銅打造
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Style Scenarios Section (使用情境區) -->
+    <section id="styles" class="py-20 bg-vintage-card/60 border-b-4 border-vintage-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="font-retro text-vintage-red text-lg uppercase tracking-widest mb-2">STYLE SCENARIOS</h2>
+                    <p class="font-serif text-3xl sm:text-4xl font-black text-vintage-dark">穿梭都市與荒野的多重場合</p>
+                </div>
+                <p class="text-vintage-dark/70 font-medium max-w-md mt-4 md:mt-0">
+                    不論是騎乘復古重機、週末露營，抑或是日常咖啡館漫步，都能展現剛柔並濟的美式硬派美學。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Scenario 1 -->
+                <div class="group bg-amber-50 border-3 border-vintage-dark overflow-hidden shadow-[6px_6px_0px_#1A1817]">
+                    <div class="relative overflow-hidden h-72 border-b-3 border-vintage-dark">
+                        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&q=80&w=600" 
+                             alt="機車騎行風格" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-110"
+                             onerror="this.src='https://placehold.co/600x400/2C3E50/FFF?text=Biker+Style'">
+                        <div class="absolute top-3 left-3 bg-vintage-red text-amber-50 text-xs font-bold px-3 py-1 border border-vintage-dark">
+                            01. BIKER & GARAGE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-black mb-2">美式重機騎士</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed mb-4">
+                            防風硬挺的牛皮夾克與重磅赤耳牛仔褲，提供極佳的防護力與帥氣狂野的騎士氣場。
+                        </p>
+                        <div class="bg-vintage-bg p-3 border-2 border-vintage-dark text-xs font-bold flex justify-between">
+                            <span>推薦單品：</span>
+                            <span class="text-vintage-red">1970 馬皮騎行夾克 + 16oz 寬版牛仔褲</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 2 -->
+                <div class="group bg-amber-50 border-3 border-vintage-dark overflow-hidden shadow-[6px_6px_0px_#1A1817]">
+                    <div class="relative overflow-hidden h-72 border-b-3 border-vintage-dark">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600" 
+                             alt="日常工裝風格" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-110"
+                             onerror="this.src='https://placehold.co/600x400/2C3E50/FFF?text=Workwear+Style'">
+                        <div class="absolute top-3 left-3 bg-vintage-mustard text-vintage-dark text-xs font-bold px-3 py-1 border border-vintage-dark">
+                            02. DAILY WORKWEAR
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-black mb-2">都市工裝休閒</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed mb-4">
+                            簡約卻充滿細節的多口袋襯衫與亨利領內搭，兼具收納便利性與不張揚的個人品味。
+                        </p>
+                        <div class="bg-vintage-bg p-3 border-2 border-vintage-dark text-xs font-bold flex justify-between">
+                            <span>推薦單品：</span>
+                            <span class="text-vintage-red">帆布獵裝夾克 + 華夫格亨利領衫</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario 3 -->
+                <div class="group bg-amber-50 border-3 border-vintage-dark overflow-hidden shadow-[6px_6px_0px_#1A1817]">
+                    <div class="relative overflow-hidden h-72 border-b-3 border-vintage-dark">
+                        <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&q=80&w=600" 
+                             alt="復古學院風格" 
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-110"
+                             onerror="this.src='https://placehold.co/600x400/2C3E50/FFF?text=Ivy+Style'">
+                        <div class="absolute top-3 left-3 bg-vintage-denim text-amber-50 text-xs font-bold px-3 py-1 border border-vintage-dark">
+                            03. IVY LEAGUE VIBE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl font-black mb-2">經典常春藤學院</h3>
+                        <p class="text-vintage-dark/80 text-sm leading-relaxed mb-4">
+                            濃厚的 60 年代美式校園復古質感，搭配燈芯絨外套與復古字體的大學 T，質感俐落。
+                        </p>
+                        <div class="bg-vintage-bg p-3 border-2 border-vintage-dark text-xs font-bold flex justify-between">
+                            <span>推薦單品：</span>
+                            <span class="text-vintage-red">重磅刷毛棒球外套 + 復古字體大學T</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Products / Pricing Showcase Section (產品與價格方案) -->
+    <section id="products" class="py-20 border-b-4 border-vintage-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-retro text-vintage-red text-lg uppercase tracking-widest mb-2">FEATURED COLLECTION</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-black text-vintage-dark">熱銷美式復古經典產品</p>
+                <p class="text-vintage-dark/70 mt-3 font-medium">每款均提供 30 天試穿滿意保證與免費退換貨服務</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Product 1: Basic Tee -->
+                <div class="bg-amber-50 border-3 border-vintage-dark p-6 flex flex-col justify-between shadow-[6px_6px_0px_#1A1817] relative">
+                    <div>
+                        <div class="relative mb-6 border-2 border-vintage-dark bg-vintage-bg">
+                            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=600" 
+                                 alt="美式重磅口袋T" 
+                                 class="w-full h-64 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/8B261D/FFF?text=Heavyweight+Tee'">
+                            <span class="absolute top-2 right-2 bg-vintage-dark text-amber-50 text-xs font-bold px-2 py-1">熱銷入門款</span>
+                        </div>
+
+                        <h3 class="font-serif text-2xl font-black mb-2">10oz 美式重磅口袋 Tee</h3>
+                        <p class="text-vintage-dark/80 text-sm mb-4">老式環紡竹節棉打造，領口加固防鬆脫雙針車縫，硬挺不透。</p>
+
+                        <!-- Specifications -->
+                        <ul class="space-y-2 mb-6 text-xs font-bold text-vintage-dark/90 border-t-2 border-b-2 border-vintage-dark/20 py-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 10oz 極致厚實不激凸</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 無縫筒織工藝（Side-Seamless）</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 附贈經典復古提紙盒</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="font-retro text-3xl text-vintage-red">NT$ 1,280</span>
+                            <span class="text-xs text-vintage-dark/50 line-through">NT$ 1,680</span>
+                        </div>
+                        <button onclick="addToCart('10oz 美式重磅口袋 Tee', 1280)" class="w-full retro-btn bg-vintage-dark text-amber-50 font-bold py-3 border-2 border-vintage-dark shadow-[3px_3px_0px_#1A1817] flex items-center justify-center gap-2">
+                            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                            <span>立即加入購物車</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Denim Jacket (BEST VALUE) -->
+                <div class="bg-amber-50 border-4 border-vintage-dark p-6 flex flex-col justify-between shadow-[10px_10px_0px_#1A1817] relative transform lg:-translate-y-3 bg-gradient-to-b from-amber-50 to-vintage-mustard/20">
+                    
+                    <!-- Popular Badge -->
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-vintage-red text-amber-50 font-retro text-sm px-6 py-1 border-2 border-vintage-dark shadow-[2px_2px_0px_#1A1817]">
+                        ⭐ MOST POPULAR
+                    </div>
+
+                    <div>
+                        <div class="relative mb-6 border-2 border-vintage-dark bg-vintage-bg mt-2">
+                            <img src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&q=80&w=600" 
+                                 alt="赤耳丹寧夾克" 
+                                 class="w-full h-64 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/2C3E50/FFF?text=Denim+Jacket'">
+                            <span class="absolute top-2 right-2 bg-vintage-mustard text-vintage-dark font-bold text-xs px-2 py-1 border border-vintage-dark">經典 Type-II 裁縫</span>
+                        </div>
+
+                        <h3 class="font-serif text-2xl font-black mb-2">14.5oz 原色赤耳丹寧外套</h3>
+                        <p class="text-vintage-dark/80 text-sm mb-4">日本岡山傳統紡織機織造，含經典紅線赤耳布邊，養褲養夾克首選。</p>
+
+                        <!-- Specifications -->
+                        <ul class="space-y-2 mb-6 text-xs font-bold text-vintage-dark/90 border-t-2 border-b-2 border-vintage-dark/20 py-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 日本岡山 14.5oz 赤耳布邊</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 訂製實心黃銅品牌五金扣</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 免費提供一次養色指導與縮水諮詢</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 贈送經典皮革保養油乙罐</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="font-retro text-4xl text-vintage-red">NT$ 3,880</span>
+                            <span class="text-sm text-vintage-dark/50 line-through">NT$ 4,980</span>
+                        </div>
+                        <button onclick="addToCart('14.5oz 原色赤耳丹寧外套', 3880)" class="w-full retro-btn bg-vintage-red text-amber-50 font-bold py-4 text-lg border-2 border-vintage-dark shadow-[4px_4px_0px_#1A1817] flex items-center justify-center gap-2">
+                            <i data-lucide="zap" class="w-5 h-5 text-vintage-mustard"></i>
+                            <span>搶購限定版夾克</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Leather Jacket -->
+                <div class="bg-amber-50 border-3 border-vintage-dark p-6 flex flex-col justify-between shadow-[6px_6px_0px_#1A1817] relative">
+                    <div>
+                        <div class="relative mb-6 border-2 border-vintage-dark bg-vintage-bg">
+                            <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=600" 
+                                 alt="茶芯馬皮騎士皮衣" 
+                                 class="w-full h-64 object-cover"
+                                 onerror="this.src='https://placehold.co/600x400/3A332C/FFF?text=Leather+Jacket'">
+                            <span class="absolute top-2 right-2 bg-vintage-dark text-amber-50 text-xs font-bold px-2 py-1">頂級工藝旗艦款</span>
+                        </div>
+
+                        <h3 class="font-serif text-2xl font-black mb-2">1970s 茶芯馬皮騎士皮衣</h3>
+                        <p class="text-vintage-dark/80 text-sm mb-4">選用頂級植鞣茶芯馬皮，隨著著用時間露出的老味茶色底層，質感絕頂。</p>
+
+                        <!-- Specifications -->
+                        <ul class="space-y-2 mb-6 text-xs font-bold text-vintage-dark/90 border-t-2 border-b-2 border-vintage-dark/20 py-4">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 日本進口高密度茶芯馬皮</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> TALON 復古金屬黃銅拉鍊</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-vintage-red"></i> 終身免費皮衣保養維修保固</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline gap-2 mb-4">
+                            <span class="font-retro text-3xl text-vintage-red">NT$ 12,800</span>
+                            <span class="text-xs text-vintage-dark/50 line-through">NT$ 15,800</span>
+                        </div>
+                        <button onclick="addToCart('1970s 茶芯馬皮騎士皮衣', 12800)" class="w-full retro-btn bg-vintage-dark text-amber-50 font-bold py-3 border-2 border-vintage-dark shadow-[3px_3px_0px_#1A1817] flex items-center justify-center gap-2">
+                            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+                            <span>預訂旗艦皮衣</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof / Customer Reviews Section (社群證言) -->
+    <section id="reviews" class="py-20 bg-vintage-card/40 border-b-4 border-vintage-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-retro text-vintage-red text-lg uppercase tracking-widest mb-2">VOICE OF RIDERS & COLLECTORS</h2>
+                <p class="font-serif text-3xl sm:text-4xl font-black text-vintage-dark">復古玩家與騎士的真實口碑</p>
+                <p class="text-vintage-dark/70 mt-2">已有超過 12,000+ 位美式復古愛好者選擇我們的服飾</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Review 1 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[5px_5px_0px_#1A1817] relative">
+                    <div class="flex text-vintage-mustard mb-3">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-vintage-dark/90 text-sm leading-relaxed mb-6 font-medium">
+                        「這款赤耳丹寧夾克的版型真的太棒了！穿上後磅數足夠硬挺，洗過一次後的色落質感簡直驚艷，朋友都以為是我在日本古著店淘到的老品！」
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t-2 border-vintage-dark/20">
+                        <div class="w-10 h-10 rounded-full bg-vintage-denim text-amber-50 font-bold flex items-center justify-center border border-vintage-dark">
+                            陳
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">陳偉哲 (Rock)</p>
+                            <p class="text-xs text-vintage-dark/60">復古重機車主 / 養褲齡 8 年</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[5px_5px_0px_#1A1817] relative">
+                    <div class="flex text-vintage-mustard mb-3">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-vintage-dark/90 text-sm leading-relaxed mb-6 font-medium">
+                        「10oz 的口袋 T-Shirt 質感沒話說！以前買普通白 T 一洗領口就鬆掉，這家的洗了五六次依然非常平整挺拔，絕對會再回購包色。」
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t-2 border-vintage-dark/20">
+                        <div class="w-10 h-10 rounded-full bg-vintage-red text-amber-50 font-bold flex items-center justify-center border border-vintage-dark">
+                            林
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">林彥廷</p>
+                            <p class="text-xs text-vintage-dark/60">工裝穿搭部落客</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-amber-50 p-6 border-3 border-vintage-dark shadow-[5px_5px_0px_#1A1817] relative">
+                    <div class="flex text-vintage-mustard mb-3">
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                    </div>
+                    <p class="text-vintage-dark/90 text-sm leading-relaxed mb-6 font-medium">
+                        「茶芯馬皮皮衣的皮質非常紮實，剛收到時硬朗，穿了兩週後漸漸貼合身型，出油的光澤感無可匹敵！這種工藝價格真的高 CP 值。」
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t-2 border-vintage-dark/20">
+                        <div class="w-10 h-10 rounded-full bg-vintage-mustard text-vintage-dark font-bold flex items-center justify-center border border-vintage-dark">
+                            張
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">張兆銘</p>
+                            <p class="text-xs text-vintage-dark/60">美式古著收藏家</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner Section (強力購買/訂閱引導) -->
+    <section class="py-16 bg-vintage-red text-amber-50 border-b-4 border-vintage-dark relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
+            <span class="inline-block bg-vintage-mustard text-vintage-dark font-retro text-lg px-4 py-1 border-2 border-vintage-dark shadow-[3px_3px_0px_#1A1817]">
+                SPECIAL LIMITED OFFER
+            </span>
+            <h2 class="font-serif text-3xl sm:text-5xl font-black text-amber-50 leading-tight">
+                準備好展現你的硬派靈魂了嗎？
+            </h2>
+            <p class="text-amber-100 text-base sm:text-lg max-w-2xl mx-auto font-medium">
+                現在下單即享首購 9 折優惠，並贈送 VINTAGE IRON 典藏金屬鑰匙圈與經典手工包裝！
+            </p>
+            
+            <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+                <a href="#products" class="retro-btn bg-vintage-mustard text-vintage-dark font-bold text-lg px-8 py-4 border-3 border-vintage-dark shadow-[5px_5px_0px_#1A1817] flex items-center justify-center gap-2">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    <span>立即享受 9 折首購</span>
+                </a>
+            </div>
+
+            <!-- Guarantee Badges -->
+            <div class="flex flex-wrap justify-center gap-6 pt-6 text-xs text-amber-200 font-bold">
+                <span class="flex items-center gap-1"><i data-lucide="truck" class="w-4 h-4"></i> 全台滿額免運</span>
+                <span class="flex items-center gap-1"><i data-lucide="rotate-ccw" class="w-4 h-4"></i> 30 天鑑賞期免費退換</span>
+                <span class="flex items-center gap-1"><i data-lucide="shield" class="w-4 h-4"></i> 100% 正品工藝保證</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section (頁尾與聯絡資訊) -->
+    <footer class="bg-vintage-dark text-amber-50 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-amber-50/20">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-vintage-red text-amber-50 font-retro text-xl flex items-center justify-center border border-amber-50">
+                            V
+                        </div>
+                        <span class="font-retro text-2xl tracking-wider text-amber-50">VINTAGE IRON & THREAD</span>
+                    </div>
+                    <p class="text-amber-50/70 text-sm leading-relaxed max-w-sm">
+                        專注於美式黃金年代重磅服飾復刻。我們堅持古法車縫與經典剪裁，為每一位對品質有所堅持的靈魂提供終身相伴的經典服裝。
+                    </p>
+                    <div class="flex space-x-3 pt-2">
+                        <a href="#" class="w-9 h-9 bg-amber-50/10 border border-amber-50/30 flex items-center justify-center hover:bg-vintage-mustard hover:text-vintage-dark transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-amber-50/10 border border-amber-50/30 flex items-center justify-center hover:bg-vintage-mustard hover:text-vintage-dark transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 bg-amber-50/10 border border-amber-50/30 flex items-center justify-center hover:bg-vintage-mustard hover:text-vintage-dark transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-serif font-bold text-amber-50 text-lg mb-4 border-b border-vintage-red pb-1 inline-block">產品系列</h4>
+                    <ul class="space-y-2 text-sm text-amber-50/70">
+                        <li><a href="#products" class="hover:text-vintage-mustard transition-colors">重磅純棉 T-Shirt</a></li>
+                        <li><a href="#products" class="hover:text-vintage-mustard transition-colors">赤耳丹寧牛仔系列</a></li>
+                        <li><a href="#products" class="hover:text-vintage-mustard transition-colors">老式工裝外套與襯衫</a></li>
+                        <li><a href="#products" class="hover:text-vintage-mustard transition-colors">茶芯馬皮皮衣系列</a></li>
+                        <li><a href="#products" class="hover:text-vintage-mustard transition-colors">復古黃銅配件 / 配飾</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Customer Care -->
+                <div>
+                    <h4 class="font-serif font-bold text-amber-50 text-lg mb-4 border-b border-vintage-red pb-1 inline-block">顧客服務</h4>
+                    <ul class="space-y-2 text-sm text-amber-50/70">
+                        <li><a href="#" class="hover:text-vintage-mustard transition-colors">尺寸對照表與丈量教學</a></li>
+                        <li><a href="#" class="hover:text-vintage-mustard transition-colors">丹寧養色與清潔保養</a></li>
+                        <li><a href="#" class="hover:text-vintage-mustard transition-colors">退換貨政策與保固流程</a></li>
+                        <li><a href="#" class="hover:text-vintage-mustard transition-colors">常見問題 FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div>
+                    <h4 class="font-serif font-bold text-amber-50 text-lg mb-4 border-b border-vintage-red pb-1 inline-block">旗艦概念店</h4>
+                    <ul class="space-y-3 text-sm text-amber-50/70">
+                        <li class="flex items-start gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-vintage-mustard shrink-0 mt-1"></i>
+                            <span>台北市大安區敦化南路一段 187 巷 50 號</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-vintage-mustard shrink-0"></i>
+                            <span>(02) 2771-1978</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4 text-vintage-mustard shrink-0"></i>
+                            <span>service@vintageiron.com</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="clock" class="w-4 h-4 text-vintage-mustard shrink-0"></i>
+                            <span>週一至週日 13:00 - 22:00</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-amber-50/50">
+                <p>© 2026 VINTAGE IRON & THREAD CO. ALL RIGHTS RESERVED.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:underline">隱私權政策</a>
+                    <a href="#" class="hover:underline">服務條款</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast / Modal Notice (模擬購物車點擊) -->
+    <div id="cart-modal" class="fixed bottom-5 right-5 z-50 transform translate-y-32 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-vintage-mustard text-vintage-dark font-bold p-4 border-3 border-vintage-dark shadow-[5px_5px_0px_#1A1817] flex items-center gap-3">
+            <i data-lucide="check-circle-2" class="w-6 h-6 text-vintage-red"></i>
+            <div>
+                <p id="cart-item-title" class="text-sm font-black">已將商品加入購物車</p>
+                <p class="text-xs">結帳時輸入優惠碼【VINTAGE10】享 9 折優惠</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Functions -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Add To Cart Toast Interaction
+        function addToCart(productName, price) {
+            const modal = document.getElementById('cart-modal');
+            const itemTitle = document.getElementById('cart-item-title');
+            
+            itemTitle.textContent = `已成功將「${productName}」加入購物車！`;
+            
+            modal.classList.remove('translate-y-32', 'opacity-0');
+            modal.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                modal.classList.remove('translate-y-0', 'opacity-100');
+                modal.classList.add('translate-y-32', 'opacity-0');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
